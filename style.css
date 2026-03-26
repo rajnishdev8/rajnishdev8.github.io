@@ -1,51 +1,101 @@
-// Typing animation
-const text = ["Lead Software Engineer", "Backend Specialist", "Microservices Expert"];
-let i = 0, j = 0, currentText = "", isDeleting = false;
-
-function type() {
-  currentText = text[i];
-
-  if (isDeleting) {
-    j--;
-  } else {
-    j++;
-  }
-
-  document.getElementById("typing").textContent = currentText.substring(0, j);
-
-  if (!isDeleting && j === currentText.length) {
-    isDeleting = true;
-    setTimeout(type, 1000);
-    return;
-  }
-
-  if (isDeleting && j === 0) {
-    isDeleting = false;
-    i = (i + 1) % text.length;
-  }
-
-  setTimeout(type, isDeleting ? 50 : 100);
+:root {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #e2e8f0;
+  --accent: #38bdf8;
 }
 
-type();
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
 
-// Scroll reveal
-const hiddenElements = document.querySelectorAll('.hidden');
+/* Layout */
+.container {
+  max-width: 700px;
+  width: 100%;
+  display: grid;
+  gap: 14px;
+}
 
-window.addEventListener('scroll', () => {
-  hiddenElements.forEach(el => {
-    const rect = el.getBoundingClientRect().top;
-    if (rect < window.innerHeight - 100) {
-      el.classList.add('show');
-    }
-  });
-});
+/* Cards */
+.card {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 12px;
+  transition: 0.2s;
+}
 
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.onclick = function(e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href'))
-      .scrollIntoView({ behavior: 'smooth' });
-  };
-});
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* Header */
+.header {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.avatar {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+}
+
+/* Text */
+h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+h2 {
+  font-size: 1rem;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+
+/* Links */
+.links a {
+  color: var(--accent);
+  text-decoration: none;
+  margin-right: 10px;
+  font-size: 0.85rem;
+}
+
+/* Tags */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tags span {
+  background: #334155;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+/* Expandable */
+.expandable .content {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.expandable.active .content {
+  max-height: 200px;
+  margin-top: 10px;
+}
