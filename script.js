@@ -1,5 +1,5 @@
 // Typing effect (compact)
-const roles = ["Lead Software Engineer", "Backend Developer", "Cloud Enthusiast"];
+const roles = ["Lead Software Engineer", "Backend Developer", "Cloud Enthusiast", "Microservice developer"];
 let i = 0, j = 0, current = "", deleting = false;
 
 function type() {
