@@ -1,69 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Rajnish | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header class="glass">
-  <nav>
-    <h2>Rajnish</h2>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+<div class="container">
 
-<!-- HERO -->
-<section class="hero">
-  <h1>Hi, I'm Rajnish 👋</h1>
-  <h2><span id="typing"></span></h2>
-</section>
+  <!-- HEADER -->
+  <div class="card header">
+    <div class="avatar"></div>
+    <div>
+      <h1>Rajnish</h1>
+      <p id="typing"></p>
+      <div class="links">
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Resume</a>
+      </div>
+    </div>
+  </div>
 
-<!-- ABOUT -->
-<section id="about" class="section hidden">
-  <h2>About Me</h2>
-  <p>
-    Lead Software Engineer specializing in scalable backend systems,
-    microservices, and cloud architecture.
-  </p>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience" class="section hidden">
-  <h2>Experience</h2>
+  <!-- ABOUT -->
   <div class="card">
-    <h3>Lead Software Engineer</h3>
-    <p>Building distributed systems and high-performance backend solutions.</p>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="section hidden">
-  <h2>Projects</h2>
-
-  <div class="project-card">
-    <h3>Project One</h3>
-    <p>Scalable backend system using Spring Boot.</p>
+    <h2>About</h2>
+    <p>
+      Lead Software Engineer focused on scalable backend systems,
+      microservices, and cloud platforms.
+    </p>
   </div>
 
-  <div class="project-card">
-    <h3>Project Two</h3>
-    <p>Microservices architecture with cloud deployment.</p>
+  <!-- SKILLS -->
+  <div class="card">
+    <h2>Skills</h2>
+    <div class="tags">
+      <span>Java</span>
+      <span>Spring Boot</span>
+      <span>Microservices</span>
+      <span>Cloud</span>
+      <span>SQL</span>
+    </div>
   </div>
 
-</section>
+  <!-- EXPERIENCE -->
+  <div class="card expandable">
+    <h2>Experience ⌄</h2>
+    <div class="content">
+      <p>
+        Lead Software Engineer at Blue Yonder with 12+ years of experience building scalable,
+		resilient systems for the supply chain domain. Specialized in Java, Spring Boot,
+		microservices, and SQL, with a strong focus on clean architecture and design best practices.
+		Passionate about continuous learning, collaborating with cross-functional teams, mentoring engineers,
+		and driving product and process improvements.
+      </p>
+    </div>
+  </div>
 
-<!-- CONTACT -->
-<section id="contact" class="section hidden">
-  <h2>Contact</h2>
-  <p>Email: rks.rajnish7@gmail.com</p>
-</section>
+  <!-- PROJECTS -->
+  <div class="card expandable">
+    <h2>Projects ⌄</h2>
+    <div class="content">
+      <p>• CME Billing</p>
+      <p>• BundleCharge System </p>
+	  <p>• Key Indicator </p>
+	  <p>• Payroll Integration </p>
+	  <p>• Event Framework System </p>
+    </div>
+  </div>
+
+</div>
 
 <script src="script.js"></script>
 </body>
